@@ -1,5 +1,7 @@
-<div *ngFor="let crib of cribs">
-    <h3>{{ crib.address }}</h3>
-    <h4>{{ crib.price }}</h4>
-    <p> {{ crib.type }}</p>
+<div class="row card-group">
+    <div class="col-4" *ngFor="let crib of cribs">
+        <div class="card">
+            <app-crib-card [crib]="crib"></app-crib-card>
+        </div>
+    </div>
 </div>

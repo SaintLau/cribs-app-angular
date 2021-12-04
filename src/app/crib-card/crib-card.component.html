@@ -1,0 +1,56 @@
+
+<div class="card">
+    <img src="assets/images/{{crib.image}}.jpeg" alt="">
+               
+        <div class="caption">
+            <div *ngIf="!crib.showDetails">
+                <h4>
+                    <label class="btn btn-primary" for="btn-check-outlined">{{ crib.type }}</label>
+                    <br>
+                </h4>
+                <h3>
+                    <i class="fa fa-tag" aria-hidden="true"></i>
+                        {{ crib.price | currency:'USD':true }}
+                </h3>
+                <h4>
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                        {{ crib.address }}
+                </h4>
+            
+                <hr>
+            
+                <button
+                    class="btn btn-success btn-sm"
+                    *ngIf="!crib.showDetails"
+                    (click)="crib.showDetails = !crib.showDetails">
+                        Details
+                </button>
+                </div>
+                <div *ngIf="crib.showDetails">
+                    <div class="details">
+                        <h4>
+                        <label class="btn btn-primary label" for="btn-check-outlined">
+                            Beds: {{ crib.bedrooms }}
+                        </label>
+                        <label class="btn btn-primary label" for="btn-check-outlined">
+                            Baths: {{ crib.bathrooms }}
+                        </label>
+                        <label class="btn btn-primary label" for="btn-check-outlined">
+                            SqFt: {{ crib.area }}
+                        </label> 
+                        </h4>
+                        <p>{{ crib.description }}</p>
+                        <hr>
+                        <button 
+                            class="btn btn-danger btn-sm"
+                            (click)="crib.showDetails = !crib.showDetails">
+                                Close
+                        </button>
+                </div>
+            </div>
+        </div>   
+</div>
+ 
+
+    
+
